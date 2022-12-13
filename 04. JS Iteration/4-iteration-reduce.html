@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Iteration in JavaScript - reduce()</title>
+		<meta charset="UTF-8">
+	</head>
+<body>
+
+	<h2>Iteration in JavaScript - reduce()</h2>
+
+	<h4>The Avengers are:</h4>
+	<p id="theAve"></p>
+	<BR />
+
+	<h4>The Justice League are:</h4>
+	<p id="jusLea"></p>
+	<BR />
+
+	<script>
+		let theAvengers = [ "Arita", "Dimitrios", "Panagiotis", "Evangelos", "Sotiria", "Danilo", "Ermona", "Andjela", "Dimitrios", "Gent", "Fabjan", "Bindi", "Alexandros", "Tringa", "Eleftherios", "David" ];
+		let justiceLeague = ["Orestis", "Anastasios", "Etnik", "Ilya", "Gianni", "Noent", "Egi", "Markos", "Ylber", "Konstantinos", "Anduene", "Elisavet", "Marios", "Ario", "Arbnor", "Edon", "Evangelos" ];
+
+
+		// Return how many avengers have less than 6 letters in their name
+		let numAvengers = theAvengers.reduce((total,individualAvenger) => {
+			if (individualAvenger.length < 6) {
+				console.log(total);
+				total++;
+			}
+			return total;
+		},0);
+
+		document.getElementById("theAve").innerHTML = numAvengers;
+
+		// Return an array that contains justiceLeaguers whose name starts with a letter biggen than 'M'
+		let someLeaguers = justiceLeague.reduce((total, individualLeaguer) => {
+			if (individualLeaguer[0] > "M") {
+				total.push(individualLeaguer);
+			}
+			return total;
+		}, []);
+
+		document.getElementById("jusLea").innerHTML = someLeaguers;
+	</script>
+
+</body>
+</html>
+
+

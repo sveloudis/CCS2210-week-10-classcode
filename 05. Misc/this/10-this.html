@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>This Keyword</title>
+	 <meta charset="UTF-8">
+  </head>
+
+<body>
+  <h2>This Keyword</h2>
+
+  <button id="butt1">Click to Remove Me! - Example 5</button>
+  <BR />
+
+  <script>
+
+	/* example-0: this inside Global Scope */
+		// When 'this' is used alone, it refers to the global object (window object).
+		console.log(this);
+	/* end example-0 */
+
+  	/* example-1: this inside Function*/
+		function sayHi () {
+			// When 'this' is used in a function, 'this' refers to the global object (window object).
+			console.log(this);
+			console.log("how you doin?");
+	}
+	sayHi();
+	/* end example-1 */
+
+
+	/* example-2: this inside Object Method */
+		let superhero1 = {
+			firstName: "Mitsos",
+			lastName : "Mitsou",
+			heroName : "Script-Man",
+			strength : 9999999,
+			
+			// In an object method, 'this' refers to the "owner" of the method.
+			// The superhero object is the owner of the getDetails method.
+			getDetails : function () {
+				return this.firstName + " " + this.lastName + " is " +
+				       this.heroName + " with strength " + this.strength;
+			}
+		};
+
+		console.log( superhero1.getDetails() );
+	/* end example-2 */
+
+
+	/* example-3: this inside Inner Function */
+		let superhero2 = {
+			firstName: "Ardit",
+			lastName : "Golden",
+			heroName : "This-Man",
+			strength : 8888888,
+				
+			printDetails : function () {
+				// When you access 'this' inside an inner function (inside a method),
+				// 'this' refers to the global object (which is the window).
+				function getDetails() {
+					return this.firstName + " " + this.lastName + " is " +
+						   this.heroName + " with strength " + this.strength;
+				}
+
+				return "The hero is: " + getDetails();
+			}
+		};
+
+		console.log( superhero2.printDetails() );
+	/* end example-3 */
+
+	/* example-4: this inside Arrow Function */
+		let superhero3 = {
+			firstName: "Diellza",
+			lastName : "Sunshine",
+			heroName : "Ms Bright",
+			strength : 9999888,
+				
+			printDetails : function () {
+				// When you use 'this' inside an arrow function, 'this' refers to its parent scope object.
+				// Here, this.firstName etc. inside the getDetails function, refers to the superhero3 object.
+				let getDetails = () => {
+					return this.firstName + " " + this.lastName + " is " +
+						   this.heroName + " with strength " + this.strength;
+				}
+
+				return "The hero is: " + getDetails();
+			}
+		};
+
+		console.log( superhero3.printDetails() );
+	/* end example-4 */
+
+	/* example-5: this in Event Handlers */
+		let p2 = document.getElementById("butt1");
+		p2.addEventListener("click", makeDisappear);
+
+		function makeDisappear() {
+			// console.log(this);
+			// In HTML event handlers, 'this' refers to the HTML element that received the event
+			this.style.display="none";
+		}
+	/* end example-5 */
+  </script>
+
+  <!-- example-6: this in Event Handlers -->
+  <button id="butt2" onclick="this.style.display='none'">Click to Remove Me! - Example 6</button>
+  <BR />
+  <!-- end example-6 -->
+
+  <button id="butt3" onclick="makeDisappearToo()">Click to Remove Me! - Example 7</button>
+  <BR />
+
+  <script>
+	/* example-7: this in Event Handlers */
+		function makeDisappearToo() {
+			// What will be the output?
+			// console.log(this);
+			this.style.display="none";
+		}
+	/* end example-7 */
+
+  </script>
+
+</body>
+</html>
+
+
+

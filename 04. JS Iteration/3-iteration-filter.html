@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Iteration in JavaScript - filter()</title>
+		<meta charset="UTF-8">
+	</head>
+<body>
+
+	<h2>Iteration in JavaScript - filter()</h2>
+
+	<h4>The Avengers are:</h4>
+	<p id="theAve"></p>
+	<BR />
+
+	<h4>The Justice League are:</h4>
+	<p id="jusLea"></p>
+	<BR />
+
+	<script>
+		let theAvengers = [ "Arita", "Dimitrios", "Panagiotis", "Evangelos", "Sotiria", "Danilo", "Ermona", "Andjela", "Dimitrios", "Gent", "Fabjan", "Bindi", "Alexandros", "Tringa", "Eleftherios", "David" ];
+		let justiceLeague = ["Orestis", "Anastasios", "Etnik", "Ilya", "Gianni", "Noent", "Egi", "Markos", "Ylber", "Konstantinos", "Anduene", "Elisavet", "Marios", "Ario", "Arbnor", "Edon", "Evangelos" ];
+
+
+		let someOfTheAvengers = theAvengers.filter(individualAvenger => {
+			return individualAvenger[0] === "A" || individualAvenger[0] === "B";
+		});
+
+		document.getElementById("theAve").innerHTML = someOfTheAvengers;
+
+		let someOfJusticeLeague = justiceLeague.filter(myFunction);
+		
+		function myFunction(individualJusticeLeaguer) {
+			return individualJusticeLeaguer[0] < "M";
+		}
+
+		document.getElementById("jusLea").innerHTML = someOfJusticeLeague;
+
+
+	</script>
+
+</body>
+</html>
+
+

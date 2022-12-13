@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Iteration in JavaScript - forEach()</title>
+		<meta charset="UTF-8">
+	</head>
+<body>
+
+	<h2>Iteration in JavaScript - forEach()</h2>
+
+	<h4>The Avengers are:</h4>
+	<p id="theAve"></p>
+	<BR />
+
+	<h4>The Justice League are:</h4>
+	<p id="jusLea"></p>
+	<BR />
+
+	<h4>The Invincible Villains are:</h4>
+	<p id="invVil"></p>
+	<BR />
+
+	<script>
+		let txt = "";
+		let txt2 = "";
+		let txt3 = "";
+
+		let theAvengers = [ "Arita", "Dimitrios", "Panagiotis", "Evangelos", "Sotiria", "Danilo", "Ermona", "Andjela", "Dimitrios", "Gent", "Fabjan", "Bindi", "Alexandros", "Tringa", "Eleftherios", "David" ];
+		let justiceLeague = ["Orestis", "Anastasios", "Etnik", "Ilya", "Gianni", "Noent", "Egi", "Markos", "Ylber", "Konstantinos", "Anduene", "Elisavet", "Marios", "Ario", "Arbnor", "Edon", "Evangelos" ];
+		let invincibleVillains = [ "Kostas", "Dimitris", "Simos", "Iraklis" ];
+
+		// Standard FOR LOOP
+		for (let i = 0; i < theAvengers.length; i++)
+		    console.log(theAvengers[i]);
+
+		theAvengers.forEach(myFunction);
+
+		function myFunction(individualAvenger,ind, arr) {
+			console.log(arr);
+			console.log(ind);
+			txt = txt + individualAvenger + "&nbsp;&nbsp;";
+		}
+
+		document.getElementById("theAve").innerHTML = txt;
+
+
+		justiceLeague.forEach((individualJusticeLeaguer, ind) => {
+			console.log(ind);
+			txt2 = txt2 + individualJusticeLeaguer + "&nbsp;&nbsp;"; 
+		})
+
+		document.getElementById("jusLea").innerHTML = txt2;
+
+		invincibleVillains.forEach((individualInvincibleVillain, index) => {
+			console.log(`${index+1}. ${individualInvincibleVillain}`)
+			txt3 = txt3 + "<B>" + `${index+1}` + ".</B>" + individualInvincibleVillain + "&nbsp;&nbsp;"; 
+
+		});
+
+		document.getElementById("invVil").innerHTML = txt3;
+	</script>
+
+</body>
+</html>
+
+

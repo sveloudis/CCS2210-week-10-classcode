@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Spread Operator</title>
+		<meta charset="UTF-8">
+	</head>
+<body>
+
+	<h2>Spread Operator - Results in Console</h2>
+
+	<script>
+		/* example-0 */
+		let quote = "I_am_inevitable";
+		let arrayQuote = [...quote];
+		console.log(arrayQuote);
+		/* end example-0 */
+
+		/* example-1 */
+		let stringArray1 = ['a','b','c'];
+		let stringArray2 = stringArray1;
+  
+		stringArray2.push('d');
+		console.log(stringArray1);
+		console.log(stringArray2);
+
+		let stringArray3 = ['x','y','z'];
+		let stringArray4 = stringArray3;
+  
+		stringArray4.push('w');
+		console.log(stringArray4);
+		console.log(stringArray3);
+		/* end example-1 */
+
+		/* example-2 */
+		let numArray = [1,2,3,4,5,6,15,9,8,7];
+
+		let a = Math.max(1,2,3,4,5,6,15,9,8,7);
+		console.log(a);
+		let b = Math.max(numArray);
+		console.log(b);
+		let c = Math.max(...numArray);
+		console.log(c);
+		/* end example-2 */
+
+		/* example-3 */
+		function addStuff(x, y, z, w) {
+			return x + y + z + w;
+		}
+		let args = [1, 2, 3, 4 ];
+		console.log( addStuff(...args) );
+		/* end example-3 */
+
+		/* example-4 */
+		let dog1 = {
+			name: 'marika',
+			breed: 'Chihuahua',
+			age: 2
+		};
+   
+		let clonedDog = { ...dog1 };
+		console.log(dog1);
+		console.log(clonedDog);
+		/* end example-4 */
+	</script>
+
+</body>
+</html>
+
+

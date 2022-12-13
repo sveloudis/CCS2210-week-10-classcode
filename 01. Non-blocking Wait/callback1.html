@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Callback 1</title>
+</head>
+<body>
+
+<script>
+	function first(){
+		setTimeout( function(){
+			console.log(1);
+		}, 2000 );
+	}
+
+	function second(){
+		console.log(2);
+	}
+	
+	first();
+	second();
+</script>
+
+</body>
+</html>

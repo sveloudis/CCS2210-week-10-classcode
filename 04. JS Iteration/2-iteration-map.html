@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Iteration in JavaScript - Map()</title>
+		<meta charset="UTF-8">
+	</head>
+<body>
+
+	<h2>Iteration in JavaScript - Map()</h2>
+
+	<h4>The Avengers are:</h4>
+	<p id="theAve"></p>
+	<BR />
+
+	<h4>The Justice League are:</h4>
+	<p id="jusLea"></p>
+	<BR />
+
+	<script>
+		let txt = "";
+		let txt2 = "";
+
+		let theAvengers = [ "Arita", "Dimitrios", "Panagiotis", "Evangelos", "Sotiria", "Danilo", "Ermona", "Andjela", "Dimitrios", "Gent", "Fabjan", "Bindi", "Alexandros", "Tringa", "Eleftherios", "David" ];
+		let justiceLeague = ["Orestis", "Anastasios", "Etnik", "Ilya", "Gianni", "Noent", "Egi", "Markos", "Ylber", "Konstantinos", "Anduene", "Elisavet", "Marios", "Ario", "Arbnor", "Edon", "Evangelos" ];
+
+
+		let theNewAvengers = theAvengers.map(myFunction);
+
+		function myFunction(individualAvenger, index) {
+			//theAvengers[index] = "Greated!";
+			return individualAvenger + " the great. ";
+		}
+
+		console.log(theAvengers);
+		document.getElementById("theAve").innerHTML = theNewAvengers;
+
+		let theNewjusticeLeague = justiceLeague.map(individualJusticeLeaguer => {
+			return `${individualJusticeLeaguer} the awesome. `;
+		});
+
+		document.getElementById("jusLea").innerHTML = theNewjusticeLeague;
+	</script>
+
+</body>
+</html>
+
+
